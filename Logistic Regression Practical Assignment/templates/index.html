@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+    <script type="text/javascript" src="{{url_for ('static',filename ='script/script.js')}}"></script>
+
+    <title>Extra Maritial Affairs Predction</title>
+</head>
+
+<body>
+    <!-- Nav As a heading -->
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Extra Marital Affair Prediction</span>
+    </nav>
+    <br> <br>
+    <h6 class="mx-3">Please fill the following details to Predict Extra Marital Affair</h6>
+    <div class="container">
+        <form action="\predict" method="post" class="my-3">
+            <div class="form-row">
+              <div class="col">
+                <div class="card my-3 mx-3" id="card" style="width: 21rem;">
+                  <div class ="card-body">
+                    <h5 class="card-title">rate_marriage</h5>
+                    <select name="rate_marriage" id="rate_marriage">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-3 mx-3" id="card1" style="width: 21rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">age</h5>
+                    <input type="text" name="age" class="form-control" placeholder="Enter Integer Value"
+                    required="required">
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-3 mx-3" id="card2" style="width: 21rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">yrs_married</h5>
+                    <input type="text" name="yrs_married" class="form-control" placeholder="Enter Integer Value"
+                    required="required">
+                  </div>
+                </div>
+              </div>  
+              <div class="col">
+                <div class="card mx-3" id="card3" style="width: 21rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">children</h5>
+                    <input type="text" name="children" class="form-control" placeholder="Enter Integer Value"
+                    required="required">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="form-row">
+              <div class="col">
+                <div class="card my-3 mx-3" id="card4" style="width: 21rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">religious</h5>
+                    <select name="religious" id="religious">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-3 mx-3" style="width: 21rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">educ</h5>
+                    <select name="educ" id="educ">
+                      <option value="9">9</option>
+                      <option value="12">12</option>
+                      <option value="14">14</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="20">20</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-3 mx-3" id="card5" style="width: 21rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">occupation</h5>
+                    <select name="occupation" id="occupation">
+                        <option value="occ_2">occ_2</option>
+                        <option value="occ_3">occ_3</option>
+                        <option value="occ_4">occ_4</option>
+                        <option value="occ_5">occ_5</option>
+                        <option value="occ_6">occ_6</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-3 mx-3" style="width: 21rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">occupation_husb</h5>
+                    <select name="occupation_husb" id="occupation_husb">
+                        <option value="occ_husb_2">occ_husb_2</option>
+                        <option value="occ_husb_3">occ_husb_3</option>
+                        <option value="occ_husb_4">occ_husb_4</option>
+                        <option value="occ_husb_5">occ_husb_5</option>
+                        <option value="occ_husb_6">occ_husb_6</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card my-3 mx-3" id="card1" style="width: 21rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Intercept</h5>
+                    <input type="text" name="Intercept" class="form-control" placeholder="Enter Integer Value"
+                    required="required">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="col my-3">
+              <input type="submit" id="button" value="Submit" class="btn btn-primary">
+            </div>
+        </form>
+        <br>
+
+        <div class="container">
+          <h3>{{ prediction_text }}</h3>
+        </div>
+        <br>
+       <!-- <p class="copyright text-muted" style="text-align: center;">copyright@: Mayur Borkar</p>-->
+    </div>
+
+    <footer>
+      <a href="https://www.linkedin.com/in/ankit-marwaha-928703113/" target="_blank"><i class="fa fa-linkedin" ></i></a>
+      <br>
+      <small class="copyright text-muted">copyright@: Ankit Marwaha</small>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
