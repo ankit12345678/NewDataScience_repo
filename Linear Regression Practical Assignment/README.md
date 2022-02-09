@@ -1,1 +1,1 @@
-Heroku cloud Link :- https://bostonhousepredictions.herokuapp.com/predict
+Heroku cloud Link :- https://bostonhousepredictions.herokuapp.com
